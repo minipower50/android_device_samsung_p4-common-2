@@ -123,7 +123,7 @@ PRODUCT_COPY_FILES += \
 
 # frandom
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/etc/init.d/00random:system/etc/init.d/00random \
+    $(LOCAL_PATH)/prebuilt/etc/init.d/00random:system/etc/init.d/00random
 
 PRODUCT_CHARACTERISTICS := tablet,nosdcard
 
