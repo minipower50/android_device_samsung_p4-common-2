@@ -40,6 +40,9 @@ ARCH_ARM_USE_NON_NEON_MEMCPY := true
 # Kernel Source
 TARGET_KERNEL_SOURCE := kernel/samsung/p4
 
+# Build kernel using Linaro 4.7 toolchain
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro-4.7
+
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_KERNEL_CMDLINE := 
 BOARD_PAGE_SIZE := 2048
