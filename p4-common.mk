@@ -140,13 +140,5 @@ PRODUCT_PACKAGES += \
 DEVICE_PACKAGE_OVERLAYS := \
     $(LOCAL_PATH)/overlay
 
-# for bugmailer
-ifneq ($(TARGET_BUILD_VARIANT),user)
-	PRODUCT_PACKAGES += send_bug
-	PRODUCT_COPY_FILES += \
-        system/extras/bugmailer/bugmailer.sh:system/bin/bugmailer.sh \
-        system/extras/bugmailer/send_bug:system/bin/send_bug
-endif
-
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
 
