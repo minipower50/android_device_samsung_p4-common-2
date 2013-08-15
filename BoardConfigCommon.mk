@@ -74,10 +74,6 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 # override recovery init.rc
 TARGET_RECOVERY_INITRC := device/samsung/p4-common/recovery/init.rc
 
-# Recovery.fstab
-TARGET_RECOVERY_FSTAB := device/samsung/p4-common/fstab.p3
-RECOVERY_FSTAB_VERSION := 2
-
 # Indicate that the board has an Internal SD Card
 BOARD_HAS_SDCARD_INTERNAL := true
 
