@@ -10,5 +10,5 @@
 /dev/block/platform/sdhci-tegra.3/by-num/p1    /efs       ext4    noatime,nosuid,nodev    wait,check
 
 # This are the vold-managed volumes
-/devices/platform/sdhci-tegra.0/mmc_host/mmc1	/storage/sdcard0	auto	default	voldmanaged=sdcard:auto
+# /devices/platform/sdhci-tegra.0/mmc_host/mmc1	/storage/sdcard0	auto	default	voldmanaged=sdcard:auto
 /devices/platform/tegra-ehci.1	/storage/usbdrive0	auto	defaults	voldmanaged=usbdrive0:auto
