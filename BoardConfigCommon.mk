@@ -44,11 +44,7 @@ BOARD_PAGE_SIZE := 2048
 
 # Kernel Source & Toolchain
 TARGET_KERNEL_SOURCE := kernel/samsung/p4
-TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.7_SaberMod/bin/arm-eabi-
-
-# ROM Toolchain
-TARGET_GCC_VERSION := 4.9_SaberMod
-TARGET_USE_LINARO_STRING_ROUTINES := true
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := arm-eabi-4.6
 
 TARGET_NO_RADIOIMAGE := true
 TARGET_BOARD_PLATFORM := tegra
