@@ -67,7 +67,9 @@ PRODUCT_PROPERTY_OVERRIDES := \
     ro.sf.lcd_density=160 \
     ro.bq.gpu_to_cpu_unsupported=1 \
     dalvik.vm.dexopt-data-only=1 \
-    debug.hwui.render_dirty_regions=false
+    debug.hwui.render_dirty_regions=false \
+    ro.zygote.disable_gl_preload=true \
+    persist.sys.usb.config=adb
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
@@ -131,6 +133,11 @@ PRODUCT_PACKAGES += \
     power.p3 \
     libnetcmdiface \
     WiFiDirectDemo
+
+# Disable SELinux
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.boot.selinux=disabled \
+    ro.build.selinux=0
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
