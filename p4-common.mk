@@ -136,7 +136,8 @@ PRODUCT_PACKAGES += \
 
 # Disable SELinux
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.boot.selinux=disabled
+    ro.boot.selinux=disabled \
+    ro.build.selinux=0
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
