@@ -67,8 +67,6 @@ BOARD_EGL_CFG := device/samsung/p4-common/egl.cfg
 #BOARD_USES_OVERLAY := true
 USE_OPENGL_RENDERER := true
 
-COMMON_GLOBAL_CFLAGS += -DICS_AUDIO_BLOB
-
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 #TARGET_RECOVERY_UI_LIB := librecovery_ui_ventana
 
