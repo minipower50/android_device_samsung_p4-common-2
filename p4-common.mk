@@ -130,8 +130,7 @@ PRODUCT_PACKAGES += \
     librs_jni \
     com.android.future.usb.accessory \
     power.p3 \
-    libnetcmdiface \
-    WiFiDirectDemo
+    libnetcmdiface
 
 # Disable SELinux
 PRODUCT_PROPERTY_OVERRIDES += \
