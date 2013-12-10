@@ -69,7 +69,8 @@ PRODUCT_PROPERTY_OVERRIDES := \
     dalvik.vm.dexopt-data-only=1 \
     debug.hwui.render_dirty_regions=false \
     ro.zygote.disable_gl_preload=true \
-    persist.sys.usb.config=adb
+    persist.sys.usb.config=adb \
+    ro.config.low_ram=true
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
