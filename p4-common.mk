@@ -149,6 +149,7 @@ DEVICE_PACKAGE_OVERLAYS := \
 # init.d scripts
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/prebuilt/etc/init.d/60zram:system/etc/init.d/60zram
+    $(LOCAL_PATH)/prebuilt/etc/init.d/00random:system/etc/init.d/00random
 
 $(call inherit-product, frameworks/native/build/tablet-dalvik-heap.mk)
 
