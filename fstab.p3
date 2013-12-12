@@ -15,3 +15,6 @@
 # recovery
 /dev/block/platform/sdhci-tegra.3/by-num/p2  /recovery          emmc    defaults                                                                  recoveryonly
 /dev/block/platform/sdhci-tegra.3/by-num/p3  /boot              emmc    defaults                                                                  recoveryonly
+
+# This are the vold-managed volumes
+/devices/platform/tegra-ehci.0                auto              auto    defaults  voldmanaged=usbdrive:auto

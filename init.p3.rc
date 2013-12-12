@@ -4,7 +4,9 @@ on early-init
     mount debugfs debugfs /sys/kernel/debug
 
 on init
+    chmod 0701 /mnt/media_rw
     # See storage config details at http://source.android.com/tech/storage/
+    mkdir /mnt/media_rw/usbdrive 0775 system system
     mkdir /mnt/shell/emulated 0700 shell shell
     mkdir /storage/emulated 0555 root root
 
@@ -19,10 +21,11 @@ on init
     symlink /mnt/shell/emulated/0 /storage/emulated/legacy
 
     # create directory for mounting usb drives
-    mkdir /storage/usbdrive0 0664 system system
+    mkdir /storage/usbdrive 0644 system system
+
     # for backwards compatibility
-    symlink /storage/usbdrive0 /usbdrive
-    symlink /storage/usbdrive0 /mnt/usbdrive
+    symlink /storage/usbdrive /usbdrive
+    symlink /storage/usbdrive /mnt/usbdrive
 
     mkdir /efs 0771 system system
     
@@ -375,6 +378,11 @@ service gps-daemon /system/bin/gpsd
 service sdcard /system/bin/sdcard /data/media /mnt/shell/emulated 1023 1023
     class late_start
 
+# usbdrive through OTG daemon running as media_rw (1023)
+service fuse_usbdrive /system/bin/sdcard -u 1023 -g 1023 /mnt/media_rw/usbdrive /storage/usbdrive
+    class late_start
+    disabled
+
 # bugreport is triggered by the VOLUME-DOWN and VOLUME-UP keys
 service bugreport /system/bin/dumpstate -d -v -o /data/storage/bugreports/bugreport
     class main
@@ -382,13 +390,13 @@ service bugreport /system/bin/dumpstate -d -v -o /data/storage/bugreports/bugrep
     oneshot
     keycodes 115 114
 
-# Mount usb drives as /usbdrive0. Generally usb drives are formatted with FAT
+# Mount usb drives as /usbdrive. Generally usb drives are formatted with FAT
 # filesystem, so we support FAT as of now.
 on device-added-/sys/block/sda
-    mount vfat /dev/block/sda /storage/usbdrive0
+    mount vfat /dev/block/sda /storage/usbdrive
 
 on device-removed-/sys/block/sda
-    umount /storage/usbdrive0
+    umount /storage/usbdrive
 
 # For 3g tabs
 service cpboot-daemon /sbin/cbd -d -o t -p 7
